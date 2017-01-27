@@ -7,7 +7,9 @@ import com.nanda.util.ConnectionUtil;
 
 public class OrderStatusDao {
 
-	
+	/**
+	 * java doc
+	 */
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 	public void save(OrderStatus OrderStatusobj) {
 
