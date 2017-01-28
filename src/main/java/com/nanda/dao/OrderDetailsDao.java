@@ -39,7 +39,7 @@ public class OrderDetailsDao {
 	}
 		public List<OrderDetails> list(){
 			
-			String sql="select Order_no,Item_id,Quantity,Price time_of_order,seat_id,Status from Order_details";
+			String sql="select Order_no,Item_id,Quantity,Price,time_of_order,seat_id,Status from Order_details";
 			return jdbcTemplate.query(sql, (rs,rowNum)->{
 				OrderDetails OrderDetailsobj = new OrderDetails();
 				OrderStatus OrderStatusobj=new OrderStatus();
@@ -51,7 +51,7 @@ public class OrderDetailsDao {
 				OrderDetailsobj.setFoodId(FoodItemsobj);
 				
 				OrderDetailsobj.setQuantity(rs.getInt("Quantity"));
-				OrderDetailsobj.setPrice(rs.getInt("Price"));
+				OrderDetailsobj.setPrice(rs.getInt("price"));
 				OrderDetailsobj.setTimeOfOrder(rs.getTimestamp("Time_Of_order").toLocalDateTime());
 				
 				HotelSeats HotelSeatsobj = new HotelSeats();

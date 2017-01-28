@@ -36,15 +36,14 @@ public static void main(String[] args) {
 	OrderDetailsDaoobj.update(1000, "Cancelled");
 	
 	//delete
-	OrderDetailsDaoobj.delete(1000);
+	//OrderDetailsDaoobj.delete(1000);
 	
 	
 	List<OrderDetails> list= OrderDetailsDaoobj.list();
 	for(OrderDetails o: list){
-		System.out.println(o);
-		System.out.println("summa");
-		//					System.out.println(o.getOrderId().getId()+"		"+o.getFoodId().getId()+"		"+o.getQuantity()+"		"+o.getPrice()+"		"+o.getTimeOfOrder()+"		"+o.getSeatId().getId()
-//		+"		"+o.getStatus());
+	
+						System.out.println(o.getOrderId().getId()+"		"+o.getFoodId().getId()+"		"+o.getQuantity()+"		"+o.getPrice()+"		"+o.getTimeOfOrder()+"		"+o.getSeatId().getId()
+		+"		"+o.getStatus());
 	
 	}
 	
