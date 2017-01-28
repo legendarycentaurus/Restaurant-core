@@ -9,7 +9,7 @@ public class TestOrderStatusDao {
 		OrderStatus OrderStatusobj=new OrderStatus();
 		OrderStatusDao OrderStatusDaoobj=new OrderStatusDao();
 		
-		//insert
+	/*	//insert
 		OrderStatusobj.setId(1000);
 		OrderStatusobj.setStatus("meow");
 		OrderStatusobj.setTotalPrice(210);
@@ -20,7 +20,9 @@ public class TestOrderStatusDao {
 		OrderStatusDaoobj.update(OrderStatusobj);
 	
 	///delete
-		OrderStatusDaoobj.delete(1000);
+		OrderStatusDaoobj.delete(1000);*/
+		OrderStatusDaoobj.list();
+	
 	}
 	
 

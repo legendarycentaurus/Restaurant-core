@@ -3,15 +3,16 @@ package com.nanda.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import com.nanda.model.FoodItems;
+import com.nanda.model.FoodSchedule;
+import com.nanda.model.TimeSchedule;
+import com.nanda.util.ConnectionUtil;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.nanda.model.FoodItems;
-import com.nanda.model.FoodSchedule;
-import com.nanda.model.HotelSeats;
-import com.nanda.model.TimeSchedule;
-import com.nanda.model.FoodSchedule;
-import com.nanda.util.ConnectionUtil;
+
+
+
 
 public class FoodScheduleDao {
 		

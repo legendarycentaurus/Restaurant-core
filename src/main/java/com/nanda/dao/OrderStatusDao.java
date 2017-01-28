@@ -1,5 +1,7 @@
 package com.nanda.dao;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.nanda.model.OrderStatus;
@@ -36,4 +38,20 @@ public class OrderStatusDao {
 		System.out.println("No of rows deleted: " + rows);
 
 	}
+	
+	public void list(){
+			String sql="select Id,Status,Total_price from Order_Status";
+			List<OrderStatus> list=jdbcTemplate.query(sql, (rs,rowNum)->{
+			OrderStatus orderstatusobj=new OrderStatus();
+			orderstatusobj.setId(rs.getInt("id"));
+			orderstatusobj.setStatus(rs.getString("Status"));
+			orderstatusobj.setTotalPrice(rs.getInt("Total_price"));
+			return orderstatusobj;
+			});
+			
+	for(OrderStatus o:list){
+		System.out.println(o);
+	}
+	}
+	
 }

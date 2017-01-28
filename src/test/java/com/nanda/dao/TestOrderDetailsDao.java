@@ -2,6 +2,7 @@ package com.nanda.dao;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.nanda.model.FoodItems;
 import com.nanda.model.HotelSeats;
@@ -13,7 +14,7 @@ public static void main(String[] args) {
 
 	OrderDetails OrderDetailsobj=new OrderDetails();
 	OrderDetailsDao OrderDetailsDaoobj=new OrderDetailsDao();
-	
+
 	OrderStatus OrderStatusobj=new OrderStatus();
 	OrderStatusobj.setId(1000);
 	OrderDetailsobj.setOrderId(OrderStatusobj);//1
@@ -37,6 +38,15 @@ public static void main(String[] args) {
 	//delete
 	OrderDetailsDaoobj.delete(1000);
 	
+	
+	List<OrderDetails> list= OrderDetailsDaoobj.list();
+	for(OrderDetails o: list){
+		System.out.println(o);
+		System.out.println("summa");
+		//					System.out.println(o.getOrderId().getId()+"		"+o.getFoodId().getId()+"		"+o.getQuantity()+"		"+o.getPrice()+"		"+o.getTimeOfOrder()+"		"+o.getSeatId().getId()
+//		+"		"+o.getStatus());
+	
+	}
 	
 }
 }

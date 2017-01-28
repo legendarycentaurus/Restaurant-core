@@ -1,6 +1,7 @@
 package com.nanda.dao;
 
 import java.time.LocalTime;
+import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -32,6 +33,23 @@ public class TimeScheduleDao {
 		int rows = jdbcTemplate.update(sql, id);
 		System.out.println("No of rows deleted: " + rows);
 
+	}
+	public void list(){
+		String sql="Select Id,Name,Start_time,End_time from Time_Schedule ";
+		List<TimeSchedule> list=jdbcTemplate.query(sql,(rs,rowNum)->{
+			TimeSchedule TimeScheduleobj=new TimeSchedule();
+			TimeScheduleobj.setId(rs.getInt("id"));
+			TimeScheduleobj.setName(rs.getString("Name"));
+			TimeScheduleobj.setStartTime(rs.getTime("Start_Time").toLocalTime());
+			TimeScheduleobj.setEndTime(rs.getTime("End_Time").toLocalTime());
+			return TimeScheduleobj;
+		});
+		
+		for(TimeSchedule t:list){
+			
+			System.out.println(t.getId()+"		"+t.getName()+"		"+t.getStartTime()+"		"+t.getEndTime());
+			
+		}
 	}
 	
 	

@@ -14,11 +14,12 @@ public static void main(String[] args) {
 		MaximumLimitDaoobj.save(MaxiumLimitobj);
 		*/
 //update
-		MaxiumLimitobj.setId(1);
+		/*MaxiumLimitobj.setId(1);
 		MaxiumLimitobj.setMaxOrder(10);
 		MaximumLimitDaoobj.update(MaxiumLimitobj);
 		
-		MaximumLimitDaoobj.delete(2);
+		MaximumLimitDaoobj.delete(2);*/
 
+		MaximumLimitDaoobj.list();
 }
 }

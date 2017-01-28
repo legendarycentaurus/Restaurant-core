@@ -1,5 +1,7 @@
 package com.nanda.dao;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.nanda.model.MaximumLimit;
@@ -33,5 +35,19 @@ public class MaximumLimitDao {
 		System.out.println("No of rows deleted: " + rows);
 
 	}
-	
+	public void list(){
+		String sql="select ID,Max_order,Type from Maximum_Limit";
+		List<MaximumLimit> maxlimit= jdbcTemplate.query(sql,(rs,rowNum)->{
+			MaximumLimit maximumlimitobj=new MaximumLimit();
+			maximumlimitobj.setId(rs.getInt("id"));
+			maximumlimitobj.setMaxOrder(rs.getInt("Max_order"));
+			maximumlimitobj.setType(rs.getString("Type"));
+			return maximumlimitobj;
+			
+		});
+		 for(MaximumLimit m:maxlimit){
+			 System.out.println(m);
+		 }
+		
+	}
 }
