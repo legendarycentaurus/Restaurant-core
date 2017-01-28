@@ -37,7 +37,7 @@ public static void main(String[] args) {
 	
 	//delete
 	//OrderDetailsDaoobj.delete(1000);
-	
+	//select
 	
 	List<OrderDetails> list= OrderDetailsDaoobj.list();
 	for(OrderDetails o: list){
