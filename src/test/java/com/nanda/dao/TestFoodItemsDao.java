@@ -44,8 +44,10 @@ public class TestFoodItemsDao {
 	//Procedures
 	/*String s=fooditemsdaoobj.ShowBill(1102);
 	System.out.println(s);*/
-		String s=fooditemsdaoobj.Order(4, "Idli,Dosa,Poori", "4,3,2");
-		System.out.println(s);
+		/*String s=fooditemsdaoobj.Order(4, "Idli,Dosa,Poori", "4,3,2");
+		System.out.println(s);*/
 	
+		String s=fooditemsdaoobj.CancelOrder(1012);
+		System.out.println(s);
 	}
 }

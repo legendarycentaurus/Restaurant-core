@@ -127,5 +127,24 @@ public class FoodItemsDao {
 
 	}
 	
+
+	public String CancelOrder(int orderId) {
+
+		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate);
+		call.withProcedureName("pr_cancel_order");
+		call.declareParameters(new SqlParameter("i_order_no", Types.INTEGER),
+				new SqlOutParameter("O_Message", Types.VARCHAR));
+		call.setAccessCallParameterMetaData(false);
+
+		MapSqlParameterSource in = new MapSqlParameterSource();
+		in.addValue("i_order_no", orderId);
+
+		Map<String, Object> execute = call.execute(in);
+
+		String status = (String) execute.get("O_Message");
+		return status;
+
+	}
+
 	
 }
