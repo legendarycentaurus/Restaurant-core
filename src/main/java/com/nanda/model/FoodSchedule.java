@@ -1,4 +1,4 @@
-package com.nanda.model;
+																																																																									package com.nanda.model;
 
 import lombok.Data;
 
