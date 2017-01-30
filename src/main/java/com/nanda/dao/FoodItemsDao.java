@@ -2,9 +2,15 @@ package com.nanda.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SqlOutParameter;
+import org.springframework.jdbc.core.SqlParameter;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 
 import com.nanda.model.FoodItems;
 import com.nanda.util.ConnectionUtil;
@@ -83,5 +89,43 @@ public class FoodItemsDao {
 		return orderNo;
 		
 	}
+	
+	public String ShowBill(int orderId) {
+
+		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate);
+		call.withProcedureName("pr_show_bill");
+		call.declareParameters(new SqlParameter("i_order_id", Types.INTEGER),
+				new SqlOutParameter("Message", Types.VARCHAR));
+		call.setAccessCallParameterMetaData(false);
+
+		MapSqlParameterSource in = new MapSqlParameterSource();
+		in.addValue("i_order_id", orderId);
+
+		Map<String, Object> execute = call.execute(in);
+
+		String status = (String) execute.get("Message");
+		return status;
+
+	}
+	
+	
+	public String Order(int seatNo,String Item,String Quantity) {
+
+		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate);
+		call.withProcedureName("pr_order");
+		call.declareParameters(new SqlParameter("i_seatno", Types.VARCHAR),new SqlParameter("i_Item_list", Types.VARCHAR),new SqlParameter("i_quantity_list", Types.VARCHAR),
+				new SqlOutParameter("o_message", Types.VARCHAR));
+		call.setAccessCallParameterMetaData(false);
+
+		MapSqlParameterSource in = new MapSqlParameterSource();
+		in.addValue("i_seatno", seatNo).addValue("i_Item_list", Item).addValue("i_quantity_list", Quantity);
+
+		Map<String, Object> execute = call.execute(in);
+
+		String status = (String) execute.get("o_message");
+		return status;
+
+	}
+	
 	
 }
