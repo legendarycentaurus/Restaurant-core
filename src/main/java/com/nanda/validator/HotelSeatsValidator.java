@@ -1,39 +1,32 @@
 package com.nanda.validator;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.nanda.exception.HotelSeatsException;
 import com.nanda.model.HotelSeats;
+import com.nanda.util.ByteService;
+import com.nanda.util.IntegerService;
 
 public class HotelSeatsValidator {
-	
-
-	private final Logger logger = Logger.getLogger(HotelSeatsValidator.class.getName());
-
-	public void validateSave(HotelSeats hotelseats)
-	{
+	IntegerService IntegerServiceobj=new IntegerService();
+	ByteService ByteServiceobj=new ByteService();
+	public void validateSave(HotelSeats hotelseatsobj) throws HotelSeatsException{
 		
-		if("".equals(hotelseats.getId()) || "".equals(hotelseats.getSeatNo()) || "".equals(hotelseats.getStatus()))
-		{
-			try {
-				throw new HotelSeatsException("This field cannot be null");
-			} catch (HotelSeatsException e) {
-				
-				  logger.log(Level.SEVERE, "HotelseatsException",e);
-			}
-		}	
-	
-	else if(hotelseats.getId()<0 || hotelseats.getSeatNo()<0)
-	{
-		try {
-			throw new HotelSeatsException("This field should contain a value greater than 0");
-		} catch (HotelSeatsException e) {
-			
-			  logger.log(Level.SEVERE, "HotelSeatsException",e);
-		}	
+		save(hotelseatsobj);
 		
 	}
-	
+	public void save(HotelSeats hotelseatsobj) throws HotelSeatsException{
+		if(IntegerServiceobj.isNotValid(hotelseatsobj.getId()) || IntegerServiceobj.isNotValid(hotelseatsobj.getSeatNo())
+				|| ByteServiceobj.isNotValid(hotelseatsobj.getStatus())){
+			throw new HotelSeatsException("Enter a value greater than zero status should be 1 or 0");
+		}
+		
 	}
+	public void update(HotelSeats hotelseatsobj) throws HotelSeatsException{
+		if(IntegerServiceobj.isNotValid(hotelseatsobj.getId()) || IntegerServiceobj.isNotValid(hotelseatsobj.getSeatNo())
+				|| ByteServiceobj.isNotValid(hotelseatsobj.getStatus())){
+			throw new HotelSeatsException("Enter a value greater than zero  status should be 1 or 0");
+		}
+	}
+	
+
 }
+

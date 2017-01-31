@@ -1,17 +1,16 @@
 package com.nanda.dao;
 
-import java.util.List;
-
 import com.nanda.model.FoodItems;
 import com.nanda.model.FoodSchedule;
 import com.nanda.model.TimeSchedule;
+import com.nanda.service.FoodScheduleService;
 
 
 
 public class TestFoodScheduleDao {
 
 	public static void main(String[] args) {
-		FoodScheduleDao foodscheduledaoobj=new FoodScheduleDao();
+		FoodScheduleService FoodScheduleServiceobj=new FoodScheduleService();
 		FoodSchedule FoodScheduleobj= new FoodSchedule();
 		TimeSchedule TimeScheduleobj=new TimeSchedule();
 		FoodItems FoodItemsobj=new FoodItems();
@@ -23,9 +22,9 @@ public class TestFoodScheduleDao {
 			
 			FoodScheduleobj.setTime(TimeScheduleobj);
 			FoodScheduleobj.setFood(FoodItemsobj);
-			FoodScheduleobj.setTotalQuantity(300);
+			FoodScheduleobj.setTotalQuantity(0);
 		
-			foodscheduledaoobj.save(FoodScheduleobj);
+			FoodScheduleServiceobj.save(FoodScheduleobj);
 		
 			//update
 			
@@ -34,17 +33,17 @@ public class TestFoodScheduleDao {
 			TimeScheduleobj.setId(1);
 			FoodScheduleobj.setTime(TimeScheduleobj);
 			FoodScheduleobj.setFood(FoodItemsobj);
-			FoodScheduleobj.setTotalQuantity(200);
-			foodscheduledaoobj.update(FoodScheduleobj);
+			FoodScheduleobj.setTotalQuantity(0);
+			FoodScheduleServiceobj.update(FoodScheduleobj);
 		
-		//delete
-		
-		//	foodscheduledaoobj.delete(22);
-		//Select
-		List<FoodSchedule> foodList = foodscheduledaoobj.list();
-			for (FoodSchedule f : foodList) {
-				System.out.println(f.getId()+"	 "+f.getTime().getId()+"	 "+f.getFood().getId()+" 	"+f.getTotalQuantity());
-				}
+//		//delete
+//		
+//		//	FoodScheduleServiceobj.delete(22);
+//		//Select
+//		List<FoodSchedule> foodList = FoodScheduleServiceobj.list();
+//			for (FoodSchedule f : foodList) {
+//				System.out.println(f.getId()+"	 "+f.getTime().getId()+"	 "+f.getFood().getId()+" 	"+f.getTotalQuantity());
+//				}
 			
 		}
 }

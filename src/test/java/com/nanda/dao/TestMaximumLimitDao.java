@@ -1,25 +1,27 @@
 package com.nanda.dao;
 
 import com.nanda.model.MaximumLimit;
+import com.nanda.service.MaximumLimitService;
 
 public class TestMaximumLimitDao {
 public static void main(String[] args) {
 	
 		MaximumLimit MaxiumLimitobj=new MaximumLimit();
-		MaximumLimitDao MaximumLimitDaoobj=new MaximumLimitDao();
+		MaximumLimitService MaximumLimitServiceobj=new MaximumLimitService();
 		//insert
 		MaxiumLimitobj.setId(1);
 		MaxiumLimitobj.setMaxOrder(5);
 		MaxiumLimitobj.setType("Weekday");
-		MaximumLimitDaoobj.save(MaxiumLimitobj);
-		
-//update
+//		MaximumLimitServiceobj.save(MaxiumLimitobj);
+	
+////update
 		MaxiumLimitobj.setId(1);
 		MaxiumLimitobj.setMaxOrder(10);
-		MaximumLimitDaoobj.update(MaxiumLimitobj);
+		MaxiumLimitobj.setType("Weekday");
+		MaximumLimitServiceobj.update(MaxiumLimitobj);
 		
-		MaximumLimitDaoobj.delete(2);
-
-		MaximumLimitDaoobj.list();
+//		MaximumLimitDaoobj.delete(2);
+//
+//		MaximumLimitDaoobj.list();
 }
 }

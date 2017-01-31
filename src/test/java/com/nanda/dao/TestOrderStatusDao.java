@@ -1,6 +1,7 @@
 package com.nanda.dao;
 
 import com.nanda.model.OrderStatus;
+import com.nanda.service.OrderStatusService;
 
 public class TestOrderStatusDao {
 
@@ -8,20 +9,22 @@ public class TestOrderStatusDao {
 		// TODO Auto-generated method stub
 		OrderStatus OrderStatusobj=new OrderStatus();
 		OrderStatusDao OrderStatusDaoobj=new OrderStatusDao();
+		OrderStatusService OrderStatusServiceobj=new OrderStatusService();
 		
 		//insert
+//		OrderStatusobj.setId(1000);
+//		OrderStatusobj.setStatus("meow");
+//		OrderStatusobj.setTotalPrice(210);
+//		OrderStatusServiceobj.save(OrderStatusobj);
+//	//update
 		OrderStatusobj.setId(1000);
 		OrderStatusobj.setStatus("meow");
 		OrderStatusobj.setTotalPrice(210);
-		OrderStatusDaoobj.save(OrderStatusobj);
-	//update
-		OrderStatusobj.setId(1000);
-		OrderStatusobj.setTotalPrice(210);
-		OrderStatusDaoobj.update(OrderStatusobj);
+		OrderStatusServiceobj.update(OrderStatusobj);
 	
-	///delete
-		OrderStatusDaoobj.delete(1000);
-		OrderStatusDaoobj.list();
+//	///delete
+//		OrderStatusDaoobj.delete(1000);
+//		OrderStatusDaoobj.list();
 	
 	}
 	

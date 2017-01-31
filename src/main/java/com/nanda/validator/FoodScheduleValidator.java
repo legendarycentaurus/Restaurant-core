@@ -1,35 +1,28 @@
 package com.nanda.validator;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.nanda.exception.FoodScheduleException;
 import com.nanda.model.FoodSchedule;
+import com.nanda.util.IntegerService;
+import com.nanda.util.StringService;
 
 public class FoodScheduleValidator {
-
-	private final Logger logger = Logger.getLogger(FoodScheduleValidator.class.getName());
+	private final StringService StringServicefoodschedule=new StringService();
+	private final IntegerService IntegerServicefoodschedule = new IntegerService();
 	
-	public void validateSave(FoodSchedule foodschedule)
+	public void validateSave(FoodSchedule foodschedule) throws FoodScheduleException
 	{
-	if("".equals(foodschedule.getId()) || "".equals(foodschedule.getTotalQuantity()) || "".equals(foodschedule.getTime())
-		||	"".equals(foodschedule.getFood()))
-	{
-		try {
-			throw new FoodScheduleException("This field cannot be null");
-		} catch (FoodScheduleException e) {
-			
-			  logger.log(Level.SEVERE, "FoodItemsException",e);
-		}
-	}	
-	else if(foodschedule.getId()<0 || foodschedule.getTotalQuantity()<0){
-		try {
-			throw new FoodScheduleException("This field must contain a value greater than 0");
-		} catch (FoodScheduleException e) {
-			
-			  logger.log(Level.SEVERE, "FoodItemsException",e);
+			isInteger(foodschedule);
+	}
+		
+	
+	
+	public void isInteger(FoodSchedule foodschedule) throws FoodScheduleException{
+		if(IntegerServicefoodschedule.isNotValid(foodschedule.getTotalQuantity()) ||
+				IntegerServicefoodschedule.isNotValid(foodschedule.getFood().getId()) ||
+				IntegerServicefoodschedule.isNotValid(foodschedule.getTime().getId())){
+			throw new FoodScheduleException("Enter avalue greater than zero");
 		}
 		
 	}
-	}
+	
 }

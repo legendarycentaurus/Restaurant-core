@@ -15,10 +15,10 @@ public class OrderDetailsDao {
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 	public void save(OrderDetails OrderDetailsobj)
 	{
-		String sql = "insert into order_details(order_no,item_Id,quantity,price,time_of_order,seat_Id,status) "
-				+ "values(?,?,?,?,?,?,?)";
+		String sql = "insert into order_details(order_no,item_Id,quantity,price,seat_Id,status) "
+				+ "values(?,?,?,?,?,?)";
 		Object[] params = {OrderDetailsobj.getOrderId().getId(),OrderDetailsobj.getFoodId().getId(),OrderDetailsobj.getQuantity(),
-				OrderDetailsobj.getPrice(),OrderDetailsobj.getTimeOfOrder(),OrderDetailsobj.getSeatId().getId(),OrderDetailsobj.getStatus()	};
+				OrderDetailsobj.getPrice(),OrderDetailsobj.getSeatId().getId(),OrderDetailsobj.getStatus()	};
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows inserted: " + rows);
 
