@@ -16,7 +16,7 @@ public class TestFoodScheduleDao {
 		TimeSchedule TimeScheduleobj=new TimeSchedule();
 		FoodItems FoodItemsobj=new FoodItems();
 		//insert	
-		/*	
+			
 			FoodItemsobj.setId(14);
 			
 			TimeScheduleobj.setId(1);	
@@ -26,9 +26,9 @@ public class TestFoodScheduleDao {
 			FoodScheduleobj.setTotalQuantity(300);
 		
 			foodscheduledaoobj.save(FoodScheduleobj);
-		*/
+		
 			//update
-		/*	
+			
 			FoodItemsobj.setId(14);
 			
 			TimeScheduleobj.setId(1);
@@ -36,7 +36,7 @@ public class TestFoodScheduleDao {
 			FoodScheduleobj.setFood(FoodItemsobj);
 			FoodScheduleobj.setTotalQuantity(200);
 			foodscheduledaoobj.update(FoodScheduleobj);
-		*/
+		
 		//delete
 		
 		//	foodscheduledaoobj.delete(22);

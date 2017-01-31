@@ -9,10 +9,10 @@ public class TestHotelSeatsDao {
 		HotelSeats HotelSeatsobj= new HotelSeats();
 		HotelSeatsDao hotelseatsdaoobj=new HotelSeatsDao();
 //		insert
-		/*HotelSeatsobj.setSeatNo(2);
+		HotelSeatsobj.setSeatNo(2);
 		HotelSeatsobj.setStatus((byte)0);	
-		hotelseatsdaoobj.save(HotelSeatsobj);*/
-		/*
+		hotelseatsdaoobj.save(HotelSeatsobj);
+		
 	//update			
 		HotelSeatsobj.setSeatNo(2);
 		HotelSeatsobj.setStatus((byte)0);
@@ -21,7 +21,7 @@ public class TestHotelSeatsDao {
 	//Delete	
 		hotelseatsdaoobj.delete(11);
 		
-	*/
+	
 hotelseatsdaoobj.list();	
 	}
 

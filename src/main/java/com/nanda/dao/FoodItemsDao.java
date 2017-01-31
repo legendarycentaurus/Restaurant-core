@@ -126,7 +126,6 @@ public class FoodItemsDao {
 		return status;
 
 	}
-	
 
 	public String CancelOrder(int orderId) {
 
@@ -145,6 +144,7 @@ public class FoodItemsDao {
 		return status;
 
 	}
+	
 
 	
 }

@@ -3,7 +3,6 @@ package com.nanda.validator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.nanda.exception.FoodItemsException;
 import com.nanda.exception.HotelSeatsException;
 import com.nanda.model.HotelSeats;
 

@@ -38,7 +38,7 @@ public class OrderStatusDao {
 		System.out.println("No of rows deleted: " + rows);
 
 	}
-	
+
 	public void list(){
 			String sql="select Id,Status,Total_price from Order_Status";
 			List<OrderStatus> list=jdbcTemplate.query(sql, (rs,rowNum)->{
