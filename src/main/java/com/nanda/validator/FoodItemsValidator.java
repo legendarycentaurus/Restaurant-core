@@ -1,49 +1,28 @@
 package com.nanda.validator;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import com.nanda.exception.FoodItemsException;
 import com.nanda.model.FoodItems;
+import com.nanda.util.StringService;
 
 public class FoodItemsValidator {
 
-	
-	private final Logger logger = Logger.getLogger(FoodItemsValidator.class.getName());
+	private final StringService StringServiceobj=new StringService();
 
-	public void validateSave(FoodItems fooditems)
+	public void validateSave(FoodItems fooditems) throws FoodItemsException
 	{
+		save(fooditems);
+	}
 		
-		if("".equals(fooditems.getItemName()) || "".equals(fooditems.getId()) || "".equals(fooditems.getPrice()))
-		{
-			try {
-				throw new FoodItemsException("This field cannot be null");
-			} catch (FoodItemsException e) {
-				
-				  logger.log(Level.SEVERE, "FoodItemsException",e);
-			}
-		}	
-
-			else if(fooditems.getId()<0)
-			{
+	public void save(FoodItems fooditems) throws FoodItemsException{
+			if(StringServiceobj.isInValid(fooditems.getItemName())) {
 				try {
-					throw new FoodItemsException("Invalid FoodID");
-				} catch (FoodItemsException e) {
-					
-					  logger.log(Level.SEVERE, "FoodItemsException",e);
-				}	
-			}
-				else if(fooditems.getPrice()<0){
-					
-					try{
-						throw new FoodItemsException("Invalid Price");
-					} catch(FoodItemsException e)
-					{
-						logger.log(Level.SEVERE, "FoodItemsException",e);
-						
-					}
+					throw new FoodItemsException("This field cannot be null");
 				}
-			
-		}
+				catch (FoodItemsException e) {
+				  e.printStackTrace();
+				}
 	
+																		}
+	}
 }
