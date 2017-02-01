@@ -14,16 +14,16 @@ public class HotelSeatsValidator {
 		
 	}
 	public void save(HotelSeats hotelseatsobj) throws HotelSeatsException{
-		if(IntegerServiceobj.isNotValid(hotelseatsobj.getId()) || IntegerServiceobj.isNotValid(hotelseatsobj.getSeatNo())
+		if( IntegerServiceobj.isNotValid(hotelseatsobj.getSeatNo())
 				|| ByteServiceobj.isNotValid(hotelseatsobj.getStatus())){
 			throw new HotelSeatsException("Enter a value greater than zero status should be 1 or 0");
 		}
 		
 	}
-	public void update(HotelSeats hotelseatsobj) throws HotelSeatsException{
-		if(IntegerServiceobj.isNotValid(hotelseatsobj.getId()) || IntegerServiceobj.isNotValid(hotelseatsobj.getSeatNo())
-				|| ByteServiceobj.isNotValid(hotelseatsobj.getStatus())){
-			throw new HotelSeatsException("Enter a value greater than zero  status should be 1 or 0");
+	public void delete(Integer number) throws HotelSeatsException{
+		if(IntegerServiceobj.isNotValid(number))
+				{
+			throw new HotelSeatsException("Invalid Seat Id");
 		}
 	}
 	

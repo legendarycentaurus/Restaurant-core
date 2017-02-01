@@ -29,4 +29,17 @@ public class OrderStatusValidator {
 		}
 		
 	}
+	public void validateUpdate(OrderStatus OrderStatusobj) throws OrderStatusException{
+		if( IntegerServiceobj.isNotValid(OrderStatusobj.getTotalPrice())
+				|| IntegerServiceobj.isNotValid(OrderStatusobj.getId() )){
+			throw new OrderStatusException("Enter a value greater than zero ");
+		}
+		
+	}
+	public void validateDelete(Integer number) throws OrderStatusException{
+		if(IntegerServiceobj.isNotValid(number))
+				{
+			throw new OrderStatusException("Enter a value greater than zero");
+		}
+	}
 }

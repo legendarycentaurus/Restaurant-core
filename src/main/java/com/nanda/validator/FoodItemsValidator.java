@@ -19,15 +19,27 @@ public class FoodItemsValidator {
 		
 	public void isString(FoodItems fooditems) throws FoodItemsException{
 			if(StringServiceobj.isInValid(fooditems.getItemName())) {
-					throw new FoodItemsException("This field cannot be null");
+					throw new FoodItemsException("Item Name is invalid");
 						
 			}
 	}
 	
 	public void isInteger(FoodItems fooditems) throws FoodItemsException{
 		if(IntegerServiceobj.isNotValid(fooditems.getId()) || IntegerServiceobj.isNotValid(fooditems.getPrice())){
-			throw new FoodItemsException("Enter avalue greater than zero");
+			throw new FoodItemsException("Enter a value greater than zero");
 		}
-		
 	}
+		public void validateUpdate(FoodItems fooditems) throws FoodItemsException
+		{
+			isInteger(fooditems);
+		}
+	
+		public void validateDelete(Integer number) throws FoodItemsException
+		{
+			if(IntegerServiceobj.isNotValid(number)){
+				throw new FoodItemsException("Enter a value greater than zero in ID");
+			
+		}
+		}
+	
 }

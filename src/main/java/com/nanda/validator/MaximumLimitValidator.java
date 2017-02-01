@@ -29,6 +29,19 @@ public class MaximumLimitValidator {
 		}
 		
 	}
-	
+	public void validateUpdate(MaximumLimit MaximumLimit) throws MaximumLimitException
+	{
+		
+		isInteger(MaximumLimit);
+	}
 
+	public void validateDelete(Integer number) throws MaximumLimitException
+	{
+		
+		if(IntegerServiceobj.isNotValid(number)){
+			throw new MaximumLimitException("Enter avalue greater than zero");
+	}
+
+
+}
 }

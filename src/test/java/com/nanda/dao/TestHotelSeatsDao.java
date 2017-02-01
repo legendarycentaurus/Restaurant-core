@@ -6,7 +6,7 @@ import com.nanda.service.HotelSeatsService;
 public class TestHotelSeatsDao {
 
 	public static void main(String[] args) {
-
+		HotelSeatsDao HotelSeatsDaoobj=new HotelSeatsDao();
 		HotelSeats HotelSeatsobj= new HotelSeats();
 		HotelSeatsService HotelSeatsServiceobj=new HotelSeatsService();
 //		insert
@@ -15,15 +15,15 @@ public class TestHotelSeatsDao {
 		HotelSeatsServiceobj.save(HotelSeatsobj);
 		
 	//update			
-//		HotelSeatsobj.setSeatNo(2);
-//		HotelSeatsobj.setStatus((byte)0);
-//		HotelSeatsServiceobj.update(HotelSeatsobj); 
-//	
+		HotelSeatsobj.setSeatNo(2);
+		HotelSeatsobj.setStatus((byte)0);
+		HotelSeatsServiceobj.update(HotelSeatsobj); 
+	
 	//Delete	
-		//HotelSeatsServiceobj.delete(11);
+		HotelSeatsServiceobj.delete(11);
 		
 	
-//HotelSeatsServiceobj.list();	
+		HotelSeatsDaoobj.list();	
 	}
 
 	

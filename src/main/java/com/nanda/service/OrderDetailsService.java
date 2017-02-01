@@ -20,11 +20,22 @@ private OrderDetailsValidator OrderDetailsValidatorobj=new OrderDetailsValidator
 		}
 	}
 		
-		public void update(OrderDetails orderdetails) {
+		public void update(int orderId,String status) {
 			try{
-			OrderDetailsValidatorobj.validateSave(orderdetails);
+			OrderDetailsValidatorobj.validateUpdate(orderId,status);
 			OrderDetailsDao fid=new OrderDetailsDao();
-			fid.save(orderdetails);
+			fid.update(orderId,status);
+			}
+			catch(OrderDetailsException e){
+				e.printStackTrace();
+			}
+
+	}
+		public void delete(int orderId) {
+			try{
+			OrderDetailsValidatorobj.validateDelete(orderId);
+			OrderDetailsDao fid=new OrderDetailsDao();
+			fid.delete(orderId);
 			}
 			catch(OrderDetailsException e){
 				e.printStackTrace();

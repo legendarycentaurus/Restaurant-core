@@ -31,5 +31,15 @@ private MaximumLimitValidator MaximumLimitValidatorobj=new MaximumLimitValidator
 			}
 
 	}
-	
+
+		public void delete(Integer number) {
+			try{
+			MaximumLimitValidatorobj.validateDelete(number);
+			MaximumLimitDao fid=new MaximumLimitDao();
+			fid.delete(number);
+			}
+			catch(MaximumLimitException e){
+				e.printStackTrace();
+			}
+}
 }

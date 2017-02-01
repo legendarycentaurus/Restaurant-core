@@ -26,7 +26,18 @@ private HotelSeatsValidator HotelSeatsValidatorobj=new HotelSeatsValidator();
 		try{
 		HotelSeatsValidatorobj.validateSave(HotelSeats);
 		HotelSeatsDao fid=new HotelSeatsDao();
-		fid.save(HotelSeats);
+		fid.update(HotelSeats);
+		}
+		catch(HotelSeatsException e){
+			e.printStackTrace();
+		}
+
+	}
+	public void delete(Integer number) {
+		try{
+		HotelSeatsValidatorobj.delete(number);
+		HotelSeatsDao fid=new HotelSeatsDao();
+		fid.delete(number);
 		}
 		catch(HotelSeatsException e){
 			e.printStackTrace();

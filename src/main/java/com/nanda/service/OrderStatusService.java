@@ -23,7 +23,7 @@ private OrderStatusValidator OrderStatusValidatorobj=new OrderStatusValidator();
 		
 		public void update(OrderStatus orderstatus) {
 			try{
-			OrderStatusValidatorobj.validateSave(orderstatus);
+			OrderStatusValidatorobj.validateUpdate(orderstatus);
 			OrderStatusDao fid=new OrderStatusDao();
 			fid.update(orderstatus);
 			}
@@ -32,4 +32,17 @@ private OrderStatusValidator OrderStatusValidatorobj=new OrderStatusValidator();
 			}
 
 	}
+		public void delete(Integer number) {
+			try{
+			OrderStatusValidatorobj.validateDelete(number);
+			OrderStatusDao fid=new OrderStatusDao();
+
+			fid.delete(number);
+			}
+			catch(OrderStatusException e){
+				e.printStackTrace();
+			}
+
+}
+
 }

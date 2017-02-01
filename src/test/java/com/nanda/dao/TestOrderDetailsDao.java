@@ -31,20 +31,20 @@ public static void main(String[] args) {
 	
 	OrderDetailsServiceobj.save(OrderDetailsobj);
 	//update 
-//	
-//	OrderDetailsDaoobj.update(1000, "Cancelled");
-//	
-//	//delete
-//	//OrderDetailsDaoobj.delete(1000);
-//	//select
-//	
-//	List<OrderDetails> list= OrderDetailsDaoobj.list();
-//	for(OrderDetails o: list){
-//	
-//						System.out.println(o.getOrderId().getId()+"		"+o.getFoodId().getId()+"		"+o.getQuantity()+"		"+o.getPrice()+"		"+o.getTimeOfOrder()+"		"+o.getSeatId().getId()
-//		+"		"+o.getStatus());
-//	
-//	}
+
+	OrderDetailsServiceobj.update(1000, "Cancelled");
+	
+	//delete
+	OrderDetailsServiceobj.delete(1000);
+	//select
+	
+	List<OrderDetails> list= OrderDetailsDaoobj.list();
+	for(OrderDetails o: list){
+	
+						System.out.println(o.getOrderId().getId()+"		"+o.getFoodId().getId()+"		"+o.getQuantity()+"		"+o.getPrice()+"		"+o.getTimeOfOrder()+"		"+o.getSeatId().getId()
+		+"		"+o.getStatus());
+	
+	}
 	
 }
 }

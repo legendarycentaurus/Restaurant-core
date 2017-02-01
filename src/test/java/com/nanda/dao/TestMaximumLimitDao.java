@@ -5,7 +5,7 @@ import com.nanda.service.MaximumLimitService;
 
 public class TestMaximumLimitDao {
 public static void main(String[] args) {
-	
+	MaximumLimitDao MaximumLimitDaoobj	=new MaximumLimitDao();
 		MaximumLimit MaxiumLimitobj=new MaximumLimit();
 		MaximumLimitService MaximumLimitServiceobj=new MaximumLimitService();
 		//insert
@@ -20,8 +20,7 @@ public static void main(String[] args) {
 		MaxiumLimitobj.setType("Weekday");
 		MaximumLimitServiceobj.update(MaxiumLimitobj);
 		
-//		MaximumLimitDaoobj.delete(2);
-//
-//		MaximumLimitDaoobj.list();
+	MaximumLimitServiceobj.delete(2);
+		MaximumLimitDaoobj.list();
 }
 }

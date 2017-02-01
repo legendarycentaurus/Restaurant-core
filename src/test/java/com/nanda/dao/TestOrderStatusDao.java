@@ -12,19 +12,19 @@ public class TestOrderStatusDao {
 		OrderStatusService OrderStatusServiceobj=new OrderStatusService();
 		
 		//insert
-//		OrderStatusobj.setId(1000);
-//		OrderStatusobj.setStatus("meow");
-//		OrderStatusobj.setTotalPrice(210);
-//		OrderStatusServiceobj.save(OrderStatusobj);
-//	//update
+		OrderStatusobj.setId(1000);
+		OrderStatusobj.setStatus("meow");
+		OrderStatusobj.setTotalPrice(210);
+		OrderStatusServiceobj.save(OrderStatusobj);
+	//update
 		OrderStatusobj.setId(1000);
 		OrderStatusobj.setStatus("meow");
 		OrderStatusobj.setTotalPrice(210);
 		OrderStatusServiceobj.update(OrderStatusobj);
 	
-//	///delete
-//		OrderStatusDaoobj.delete(1000);
-//		OrderStatusDaoobj.list();
+	///delete
+		OrderStatusServiceobj.delete(1000);
+		OrderStatusDaoobj.list();
 	
 	}
 	

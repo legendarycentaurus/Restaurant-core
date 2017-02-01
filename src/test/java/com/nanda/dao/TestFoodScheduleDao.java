@@ -1,5 +1,7 @@
 package com.nanda.dao;
 
+import java.util.List;
+
 import com.nanda.model.FoodItems;
 import com.nanda.model.FoodSchedule;
 import com.nanda.model.TimeSchedule;
@@ -11,6 +13,7 @@ public class TestFoodScheduleDao {
 
 	public static void main(String[] args) {
 		FoodScheduleService FoodScheduleServiceobj=new FoodScheduleService();
+		FoodScheduleDao FoodScheduleDaoobj=new FoodScheduleDao();
 		FoodSchedule FoodScheduleobj= new FoodSchedule();
 		TimeSchedule TimeScheduleobj=new TimeSchedule();
 		FoodItems FoodItemsobj=new FoodItems();
@@ -36,14 +39,14 @@ public class TestFoodScheduleDao {
 			FoodScheduleobj.setTotalQuantity(0);
 			FoodScheduleServiceobj.update(FoodScheduleobj);
 		
-//		//delete
-//		
-//		//	FoodScheduleServiceobj.delete(22);
-//		//Select
-//		List<FoodSchedule> foodList = FoodScheduleServiceobj.list();
-//			for (FoodSchedule f : foodList) {
-//				System.out.println(f.getId()+"	 "+f.getTime().getId()+"	 "+f.getFood().getId()+" 	"+f.getTotalQuantity());
-//				}
+		//delete
+			
+			FoodScheduleServiceobj.delete(22);
+		//Select
+		List<FoodSchedule> foodList = FoodScheduleDaoobj.list();
+			for (FoodSchedule f : foodList) {
+				System.out.println(f.getId()+"	 "+f.getTime().getId()+"	 "+f.getFood().getId()+" 	"+f.getTotalQuantity());
+				}
 			
 		}
 }

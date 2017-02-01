@@ -22,9 +22,20 @@ public class FoodItemsService {
 		
 		public void update(FoodItems fooditems) {
 			try{
-			FoodItemsValidatorobj.validateSave(fooditems);
+			FoodItemsValidatorobj.validateUpdate(fooditems);
 			FoodItemsDao fid=new FoodItemsDao();
 			fid.update(fooditems);
+			}
+			catch(FoodItemsException e){
+				e.printStackTrace();
+			}
+
+	}
+		public void delete(Integer number ) {
+			try{
+			FoodItemsValidatorobj.validateDelete(number);
+			FoodItemsDao fid=new FoodItemsDao();
+			fid.delete(number);
 			}
 			catch(FoodItemsException e){
 				e.printStackTrace();

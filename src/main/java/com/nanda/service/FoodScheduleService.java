@@ -25,7 +25,7 @@ private FoodScheduleValidator FoodScheduleValidatorobj=new FoodScheduleValidator
 		try{
 		FoodScheduleValidatorobj.validateSave(FoodSchedule);
 		FoodScheduleDao fid=new FoodScheduleDao();
-		fid.save(FoodSchedule);
+		fid.update(FoodSchedule);
 		}
 		catch(FoodScheduleException e){
 			e.printStackTrace();
@@ -33,4 +33,15 @@ private FoodScheduleValidator FoodScheduleValidatorobj=new FoodScheduleValidator
 
 	}
 	
+	public void delete(int number) {
+		try{
+		FoodScheduleValidatorobj.validateDelete(number);
+		FoodScheduleDao fid=new FoodScheduleDao();
+		fid.delete(number);
+		}
+		catch(FoodScheduleException e){
+			e.printStackTrace();
+		}
+
+	}
 }
