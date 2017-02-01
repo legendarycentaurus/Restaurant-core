@@ -33,7 +33,7 @@ public class TestFoodItemsDao {
 			}
 	
 		//Functions
-		System.out.println(fooditemsdaoobj.validateSeat(7));
+		//System.out.println(fooditemsdaoobj.validateSeat(7));
 		System.out.println(fooditemsdaoobj.validateItemName("variety rice"));
 		System.out.println(fooditemsdaoobj.validateQuantity(10));
 		System.out.println(fooditemsdaoobj.generateOrder());
